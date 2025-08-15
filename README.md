@@ -2,7 +2,7 @@
 # Story Blueprint Format (SBF)
 
 - Vision: `docs/VISION.md`
-- Spec (GFM): `docs/Story_Blueprint_Format_GFM.md`
+- Spec (v0.1): `docs/Story_Blueprint_Format_v0.1.md`
 - Normative spec: `docs/SBF_v0.1_Spec.md`
 
 ## Quick start
