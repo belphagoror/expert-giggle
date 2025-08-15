@@ -1,0 +1,49 @@
+{
+  "spec": "SBF v0.1",
+  "spec_version": "0.1.2",
+  "dict": {
+    "s": [
+      "Alex discovers a secret in the old library."
+    ],
+    "q": []
+  },
+  "beats": [
+    {
+      "id": "b0001",
+      "act": 1,
+      "evt_si": 0,
+      "actn": {
+        "p": "char:mc",
+        "a": "discover",
+        "u": null,
+        "i": null,
+        "loc": "ent:library",
+        "when": "Day 1",
+        "time": {
+          "kind": "ordinal",
+          "episode": 1,
+          "scene": 1,
+          "beat": 1
+        }
+      }
+    }
+  ],
+  "chars": [
+    {
+      "id": "char:mc",
+      "r": "protagonist",
+      "n": "Alex"
+    }
+  ],
+  "ents": [
+    {
+      "id": "ent:library",
+      "r": "place",
+      "n": "Old Library"
+    }
+  ],
+  "l": "L2",
+  "t": "Alex discovers a secret.",
+  "lang": "en",
+  "a_schema": "verbs.en.v1"
+}

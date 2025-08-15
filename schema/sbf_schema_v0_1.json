@@ -1,0 +1,458 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SBF v0.1",
+  "type": "object",
+  "properties": {
+    "spec": {
+      "const": "SBF v0.1"
+    },
+    "spec_version": {
+      "type": "string"
+    },
+    "l": {
+      "type": "string",
+      "enum": [
+        "L0",
+        "L1",
+        "L2",
+        "L3",
+        "L4",
+        "L5"
+      ]
+    },
+    "t": {
+      "type": "string"
+    },
+    "k": {
+      "type": "object"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "style",
+          "themes",
+          "quotes",
+          "text_map"
+        ]
+      }
+    },
+    "dict": {
+      "type": "object",
+      "properties": {
+        "s": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "q": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "chars": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^char:[a-z0-9_]+$"
+          },
+          "r": {
+            "type": "string"
+          },
+          "n": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "n_si": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "pro": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ent:[a-z0-9_]+$"
+          },
+          "type": {
+            "type": "string"
+          },
+          "n": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "n_si": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "beats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "act": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "evt": {
+            "type": "string"
+          },
+          "evt_si": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "actn": {
+            "type": "object",
+            "properties": {
+              "p": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "a": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "u": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "i": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "loc": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "when": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "time": {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "ordinal",
+                      "iso"
+                    ]
+                  },
+                  "episode": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "scene": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "beat": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "start": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "pattern": "^[0-9]{4}(-[0-9]{2}){0,2}([T ][0-9]{2}:[0-9]{2}(:[0-9]{2})?)?Z?$"
+                  },
+                  "end": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "pattern": "^[0-9]{4}(-[0-9]{2}){0,2}([T ][0-9]{2}:[0-9]{2}(:[0-9]{2})?)?Z?$"
+                  }
+                },
+                "required": [
+                  "kind"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "beats_tbl": {
+      "type": "object",
+      "properties": {
+        "cols": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {}
+          }
+        }
+      }
+    },
+    "style": {
+      "type": "object",
+      "properties": {
+        "voice": {
+          "type": "string"
+        },
+        "tone_curve": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9
+          },
+          "maxItems": 5
+        },
+        "pacing": {
+          "type": "object",
+          "properties": {
+            "sentences_per_beat": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "scene_rate": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "diction": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9
+          },
+          "maxItems": 16
+        },
+        "register": {
+          "type": "string"
+        }
+      }
+    },
+    "themes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "number"
+          },
+          "beats": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "quotes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "beat": {
+            "type": "string"
+          },
+          "q_si": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "motifs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "beats": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "text_map": {
+      "type": "object",
+      "properties": {
+        "coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "loss_tolerance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "chunks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "si": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "hash": {
+                "type": "string"
+              },
+              "len": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        "spans": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "scope": {
+                "type": "string",
+                "enum": [
+                  "beat",
+                  "chapter",
+                  "scene"
+                ]
+              },
+              "ref": {
+                "type": "string"
+              },
+              "chunk": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "len": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "lang": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+    },
+    "a_schema": {
+      "type": "string",
+      "pattern": "^verbs\\.[a-z]{2}\\.v[0-9]+$"
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "rel": {
+            "type": "string"
+          },
+          "src": {
+            "type": "string",
+            "pattern": "^b[0-9]{4,}$"
+          },
+          "tgt": {
+            "type": "string",
+            "pattern": "^b[0-9]{4,}$"
+          }
+        },
+        "required": [
+          "rel",
+          "src",
+          "tgt"
+        ]
+      }
+    }
+  },
+  "required": [
+    "spec",
+    "l",
+    "t"
+  ]
+}

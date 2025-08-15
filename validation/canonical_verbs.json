@@ -1,0 +1,18 @@
+{
+  "schema": "verbs.en.v1",
+  "version": "0.1.0",
+  "verbs": [
+    "discover",
+    "confront",
+    "reveal",
+    "decide",
+    "escape",
+    "pursue",
+    "betray",
+    "sacrifice",
+    "learn",
+    "plan",
+    "attack",
+    "defend"
+  ]
+}

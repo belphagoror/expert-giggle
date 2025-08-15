@@ -1,0 +1,4 @@
+k_gloss: [2,3,4]
+gloss_policy: ["evt_si_only","evt_when_leq_10","evt_when_leq_12"]
+l5_chunk: [256,512,1024]
+levels: ["L2","L3","L5"]

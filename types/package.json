@@ -1,0 +1,23 @@
+{
+  "name": "@sbf/types",
+  "version": "0.1.2",
+  "private": true,
+  "type": "module",
+  "main": "sbf.ts",
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  },
+  "scripts": {
+    "build": "tsc --noEmit"
+  },
+  "description": "TypeScript types for Story Blueprint Format (SBF)",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belphagoror/expert-giggle.git"
+  },
+  "homepage": "https://github.com/belphagoror/expert-giggle",
+  "bugs": {
+    "url": "https://github.com/belphagoror/expert-giggle/issues"
+  }
+}

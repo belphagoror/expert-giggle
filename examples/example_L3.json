@@ -1,0 +1,63 @@
+{
+  "spec": "SBF v0.1",
+  "spec_version": "0.1.2",
+  "dict": {
+    "s": [
+      "Alex discovers a secret in the old library."
+    ],
+    "q": []
+  },
+  "beats_tbl": {
+    "cols": [
+      "id",
+      "act",
+      "evt_si",
+      "p",
+      "a",
+      "u",
+      "i",
+      "loc",
+      "when"
+    ],
+    "rows": [
+      [
+        "b0001",
+        1,
+        0,
+        "char:mc",
+        "discover",
+        null,
+        null,
+        "ent:library",
+        "Day 1"
+      ]
+    ]
+  },
+  "chars_tbl": {
+    "cols": [
+      "id",
+      "r",
+      "n",
+      "pro"
+    ],
+    "rows": [
+      [
+        "char:mc",
+        "protagonist",
+        "Alex",
+        null
+      ]
+    ]
+  },
+  "ents": [
+    {
+      "id": "ent:library",
+      "r": "place",
+      "n": "Old Library"
+    }
+  ],
+  "l": "L3",
+  "t": "Alex discovers a secret.",
+  "lang": "en",
+  "a_schema": "verbs.en.v1"
+}

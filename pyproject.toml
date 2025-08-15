@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sbf"
+version = "0.1.2"
+description = "Story Blueprint Format (SBF) — lossy-first, AI-ready story JSON"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "SBF Maintainers"}]
+license = {text = "Apache-2.0"}
+dependencies = ["jsonschema>=4.22.0","typing_extensions>=4.7"]
+[project.optional-dependencies]
+dev = ["pytest>=7.4","pre-commit>=3.5","ruff>=0.5.1","black>=24.8","mypy>=1.10"]
+fast = ["orjson>=3.9.0"]
+[project.scripts]
+sbf = "sbf.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/belphagoror/expert-giggle"
+Issues = "https://github.com/belphagoror/expert-giggle/issues"
